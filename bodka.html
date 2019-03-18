@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bodyanich</title>
+</head>
+<body>
+<button id="knopka" onclick="chisto()">baton</button>
+<select id="vibor">
+</select>
+<input id="vstavka" type="text" placeholder="football team">
+<button id="minknopka" onclick="addel()">adding</button>
+<script>
+	
+	var apl=["Manchester City", "Liverpool", "Tottenham", "Arsenal", "Manchester United", "Chelsea", "Wolverhampton", "Watford", "West Ham", "Leicester City", "Everton", "Bournemuth", "Newcastle", "Crystal Palace", "Brighton", "Southampton", "Burnley", "Cardiff City", "Fulham", "Huddersfield Town"] ;	
+	var myset = document.getElementById('vibor'); 
+function chisto(){	
+	myset.innerHtml='';
+	for (var i = 0; i < apl.length; i++) {
+		myset.innerHTML=myset.innerHTML+'<option value="'+apl[i]+'">'+apl[i]+'</option>';
+	}
+}
+function newl(name){
+	apl.push(name);
+}
+function addel(){
+	var elem=document.getElementById('vstavka').value;
+	if (elem.innerHtml='') {
+ 		alert("Please, type something!"); }
+ 		else{
+	apl.push(elem);
+	for (var i = 0; i < apl.length; i++) {
+		elem.innerHTML=elem.innerHTML+'<option value="'+apl[i]+'">'+apl[i]+'</option>';
+
+		}	
+	}	
+
+}
+</script>
+</body>
+</html>
