@@ -1,0 +1,143 @@
+var masiv1 = [12,6,56,75,23,12,19,26,24,32,12,35,37,95,77];
+var masiv2 = [71,91,23,85,15,6,78,82,37,87,46,75,29,52,32];
+
+function suma(masiv1){
+  var sum = 0;
+	for (var i = 0; i < masiv1.length; i++) {
+		sum += arr[i];
+	}
+	return sum;
+     } 
+alert(suma(masiv1));
+
+alert(masiv1.length);
+
+var elem = 12;
+function found_elem(masiv1, elem) {
+   var num = 0
+   for (var i = 0; i < masiv1.length; i++) {
+      if (masiv1[i] === elem) {
+        num++;
+      }
+   }
+    return num;
+}
+alert(found_elem (masiv1, elem)); 
+
+var elem = 24;
+function poshuk(masiv1, elem) {
+     for (var i = 0; i < masiv1.length; i++) {
+        if (arr[i] === elem) {
+            return true;
+        }
+    }
+    return false;
+}
+alert(poshuk(masiv1, elem));
+
+var elem = 19;
+function index(masiv1, elem) {
+    for (var i = 0; i < masiv1.length; i++) {
+        if (masiv1[i] === elem) {
+            return i;
+        }
+    }
+    return false;
+}
+alert(index(masiv1, elem));
+
+var elem = 12;
+function poshuk_plus_index(masiv1, elem){
+	var ves_masiv = [];
+	for (var i = 0; i < masiv1.length; i++) {
+	  if(masiv1[i] == elem){
+			ves_masiv.push(i);
+		}
+	}
+	return ves_masiv;
+}
+alert(poshuk_plus_index(masiv1, elem));
+
+function novinka(masiv1){
+	var masiv3 = [];
+	for (var i = 0; i < masiv1.length; i++) {
+	masiv3.push(masiv1[i] + 7);
+	}
+	return masiv3;
+}
+alert(novinka(masiv1));
+
+function sortirovka(masiv1){
+	var masiv4 = [];
+	for (var i = 0; i < masiv1.length; i++) {
+		if(masiv1[i] > 35){
+			masiv4.push(masiv1[i]);
+		}
+	}
+	return masiv4;
+}
+alert(sortirovka(masiv1));
+
+function dva_masiva(masiv1){
+	var masiv5 = [];
+	var masiv6 = [];
+
+	for (var i = 0; i < masiv1.length; i++) {
+		if(masiv1[i] < 50){
+			masiv5.push(masiv1[i]);
+		} else {
+			masiv6.push(masiv1[i]);
+		}
+	}
+	return ['Vidpovidaye umovam: ' + masiv5 + '. Ne vidpovidaye umovam: ' + masiv6];
+  }
+alert(dva_masiva(masiv1));
+
+function minimax(masiv1) {
+    var maximum = masiv1[0],
+        minimum = masiv1[0];
+
+    for (i = 0; i < masiv1.length; i++) {
+        if (maximum < masiv1[i]) {
+            maximum = masiv1[i];
+        }
+
+        if (minimum > masiv1[i]) {
+            minimum = masiv1[i];
+        }
+    }
+    return [minimum + ", " + maximum];
+}
+alert(minimax(masiv1));
+
+function spilni_elementi(masiv1, masiv2){
+	var masiv7 = []
+  for(var i = 0; i < masiv1.length; ++i){
+        for(var j = 0; j < masiv2.length; ++j){
+            if (masiv1[i] == masiv2[j]){
+               masiv7.push(masiv1[i]);
+            }
+        }
+ 	}
+  return [masiv7];
+ }
+alert(spilni_elementi(masiv1, masiv2));
+
+function unio_masiv(masiv) {
+    var a = masiv.concat();
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i] === a[j])
+                a.splice(j--, 1);
+        }
+    }
+    return a;
+    }
+var masiv8 = unio_masiv(masiv1.concat(masiv2));
+alert(masiv8);
+
+function menshe_bilshe(masiv8){
+ masiv8.sort();
+ return[masiv8];
+}
+alert(menshe_bilshe(masiv8));
