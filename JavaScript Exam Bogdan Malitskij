@@ -1,10 +1,10 @@
 var masiv1 = [12,6,56,75,23,12,19,26,24,32,12,35,37,95,77];
 var masiv2 = [71,91,23,85,15,6,78,82,37,87,46,75,29,52,32];
 
-function suma(masiv1){
+function suma(masiv){
   var sum = 0;
-	for (var i = 0; i < masiv1.length; i++) {
-		sum += arr[i];
+	for (var i = 0; i < masiv.length; i++) {
+		sum += masiv[i];
 	}
 	return sum;
      } 
@@ -13,11 +13,12 @@ alert(suma(masiv1));
 alert(masiv1.length);
 
 var elem = 12;
-function found_elem(masiv1, elem) {
+function found_elem(masiv, elem) {
    var num = 0
-   for (var i = 0; i < masiv1.length; i++) {
-      if (masiv1[i] === elem) {
+   for (var i = 0; i < masiv.length; i++) {
+      if (masiv[i] === elem) {
         num++;
+	alert('Find element at index: '+i);
       }
    }
     return num;
@@ -25,14 +26,15 @@ function found_elem(masiv1, elem) {
 alert(found_elem (masiv1, elem)); 
 
 var elem = 24;
-function poshuk(masiv1, elem) {
-     for (var i = 0; i < masiv1.length; i++) {
-        if (arr[i] === elem) {
+function poshuk(masiv, elem) {
+     for (var i = 0; i < masiv.length; i++) {
+        if (masiv[i] === elem) {
             return true;
         }
     }
     return false;
 }
+//De kommentari sco mi sukayemo yakomu indexi naysov elemneta?
 alert(poshuk(masiv1, elem));
 
 var elem = 19;
@@ -89,6 +91,7 @@ function dva_masiva(masiv1){
 			masiv6.push(masiv1[i]);
 		}
 	}
+	//De ye '\n'? scob z novoho ryadka
 	return ['Vidpovidaye umovam: ' + masiv5 + '. Ne vidpovidaye umovam: ' + masiv6];
   }
 alert(dva_masiva(masiv1));
@@ -108,6 +111,7 @@ function minimax(masiv1) {
     }
     return [minimum + ", " + maximum];
 }
+//Dobre bulo b alertiti sco mi zavzhdi otrimayemo
 alert(minimax(masiv1));
 
 function spilni_elementi(masiv1, masiv2){
